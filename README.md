@@ -2,5 +2,5 @@
 MUHAMMAD GIGA AFARREL (23.83.0977) 23TK01
 # SERVER
 
-"""bash
+'''bash
 ufw
