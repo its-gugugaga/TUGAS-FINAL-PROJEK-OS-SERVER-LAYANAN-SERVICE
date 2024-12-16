@@ -1,31 +1,31 @@
-# E-Commerce Web Server Project
+# FINAL PROJEK OS SERVER SISTEM ADMIN 23.83.0977
 
-## **Overview**
-This project sets up an E-Commerce web server on **Ubuntu 22.04 LTS**. The server includes Apache2, MySQL Database, Redis, Mail Server (Postfix), and PHPMyAdmin for management purposes.
+## **Ringkasan Proyek**
+Proyek ini bertujuan untuk membuat server web E-Commerce pada **Ubuntu 22.04 LTS**. Server ini mencakup layanan Apache2, MySQL Database, Redis, Mail Server (Postfix), dan PHPMyAdmin untuk keperluan manajemen database.
 
 ---
 
-## **Tech Stack**
-- **Operating System**: Ubuntu 22.04 LTS
+## **Spesifikasi dan Layanan yang Digunakan**
+- **Sistem Operasi**: Ubuntu 22.04 LTS
 - **Web Server**: Apache2
 - **Database**: MySQL
 - **Cache**: Redis
 - **Mail Server**: Postfix
-- **Database Management**: PHPMyAdmin
+- **Manajemen Database**: PHPMyAdmin
 
 ---
 
-## **Installation Steps**
-Follow the steps below to set up each service on your Ubuntu 22.04 server:
+## **Langkah Instalasi**
+Ikuti langkah-langkah di bawah ini untuk mengatur setiap layanan pada server Ubuntu 22.04:
 
-### **1. Update the System**
-Always update the system before installation:
+### **1. Update Sistem**
+Selalu perbarui sistem sebelum melakukan instalasi:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-### **2. Install Apache2 (Web Server)**
-Install Apache2 and verify its status:
+### **2. Instalasi Apache2 (Web Server)**
+Instal Apache2 dan periksa statusnya:
 ```bash
 sudo apt install apache2 -y
 sudo systemctl start apache2
@@ -33,97 +33,97 @@ sudo systemctl enable apache2
 sudo systemctl status apache2
 ```
 
-**Test**:
-- Open a browser and go to `http://localhost` or server IP.
+**Pengujian**:
+- Buka browser dan akses `http://localhost` atau alamat IP server Anda.
 
 ---
 
-### **3. Install MySQL (Database Server)**
-1. Install MySQL:
+### **3. Instalasi MySQL (Database Server)**
+1. Instal MySQL:
    ```bash
    sudo apt install mysql-server -y
    ```
-2. Secure MySQL installation:
+2. Amankan instalasi MySQL:
    ```bash
    sudo mysql_secure_installation
    ```
-   Follow the prompts to set a root password and improve security.
+   Ikuti perintah untuk mengatur kata sandi root dan meningkatkan keamanan.
 
-3. Check MySQL status:
+3. Periksa status MySQL:
    ```bash
    sudo systemctl status mysql
    ```
 
-4. Log in to MySQL:
+4. Masuk ke MySQL:
    ```bash
    sudo mysql -u root -p
    ```
 
 ---
 
-### **4. Install Redis (Caching Server)**
-1. Install Redis:
+### **4. Instalasi Redis (Caching Server)**
+1. Instal Redis:
    ```bash
    sudo apt install redis-server -y
    ```
 
-2. Configure Redis for production:
-   - Open the configuration file:
+2. Konfigurasi Redis:
+   - Buka file konfigurasi:
      ```bash
      sudo nano /etc/redis/redis.conf
      ```
-   - Find and change `supervised no` to:
+   - Temukan dan ubah `supervised no` menjadi:
      ```text
      supervised systemd
      ```
-   - Save and exit, then restart Redis:
+   - Simpan perubahan dan restart Redis:
      ```bash
      sudo systemctl restart redis-server
      sudo systemctl enable redis-server
      ```
 
-3. Verify Redis:
+3. Verifikasi Redis:
    ```bash
    redis-cli ping
    ```
-   Expected output: `PONG`
+   Output yang diharapkan: `PONG`
 
 ---
 
-### **5. Install Postfix (Mail Server)**
-1. Install Postfix and mailutils:
+### **5. Instalasi Postfix (Mail Server)**
+1. Instal Postfix dan mailutils:
    ```bash
    sudo apt install postfix mailutils -y
    ```
-2. During installation, select **Internet Site** and set the system mail name (e.g., `example.com`).
+2. Saat instalasi, pilih **Internet Site** dan atur **system mail name** (contoh: `awikwok.com`).
 
-3. Verify Postfix service:
+3. Verifikasi layanan Postfix:
    ```bash
    sudo systemctl status postfix
    ```
 
-4. Send a test email:
+4. Kirim email uji:
    ```bash
-   echo "This is a test email" | mail -s "Test Mail" user@example.com
+   echo "Ini adalah email uji" | mail -s "Test Mail" user@example.com
    ```
 
 ---
 
-### **6. Install PHP and PHPMyAdmin**
-1. Install PHP and necessary extensions:
+### **6. Instalasi PHP dan PHPMyAdmin**
+1. Instal PHP dan ekstensi yang diperlukan:
    ```bash
    sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc -y
    ```
-2. Install PHPMyAdmin:
+2. Instal PHPMyAdmin:
    ```bash
    sudo apt install phpmyadmin -y
    ```
-   - During installation:
-     - Choose Apache2.
-     - Configure the database for PHPMyAdmin using dbconfig-common.
-     - Set a password for the `phpmyadmin` user.
+   - Saat instalasi:
+     - Pilih Apache2.
+     - Konfigurasi database untuk PHPMyAdmin menggunakan dbconfig-common.
+     - Atur kata sandi untuk user `phpmyadmin`.
 
-3. Link PHPMyAdmin to Apache:
+3. Hubungkan PHPMyAdmin ke Apache:
    ```bash
    sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
    ```
@@ -133,50 +133,48 @@ sudo systemctl status apache2
    sudo systemctl restart apache2
    ```
 
-**Access PHPMyAdmin**:
-- Open `http://localhost/phpmyadmin` or `http://your-server-ip/phpmyadmin`.
+**Akses PHPMyAdmin**:
+- Buka `http://localhost/phpmyadmin` atau `http://IP-server/phpmyadmin`.
 
 ---
 
-## **Directory Structure**
-Your project directory should look like this:
+## **Struktur Direktori**
+Struktur direktori proyek Saya:
 ```text
 /var/www/html/
-    ├── your-website-folder/
     │   ├── index.html
     │   ├── style.css
     │   └── ...
-    └── phpmyadmin/        # Linked PHPMyAdmin directory
+    └── phpmyadmin/        # Direktori PHPMyAdmin yang ditautkan
 ```
 
 ---
 
-## **Testing the Web Server**
-1. Copy your project files to the Apache directory:
+## **Pengujian Web Server**
+1. Salin file proyek ke direktori Apache:
    ```bash
-   sudo cp -r /path/to/your-website /var/www/html/
+   sudo cp -r /path/to/proyek-website /var/www/html/
    ```
-2. Ensure correct permissions:
+2. Atur izin yang benar:
    ```bash
-   sudo chown -R www-data:www-data /var/www/html/your-website
-   sudo chmod -R 755 /var/www/html/your-website
+   sudo chown -R www-data:www-data /var/www/html/proyek-website
+   sudo chmod -R 755 /var/www/html/proyek-website
    ```
 3. Restart Apache2:
    ```bash
    sudo systemctl restart apache2
    ```
 
-4. Access the website:
+4. Akses website:
    ```text
-   http://localhost/your-website
+   http://localhost/proyek-website
    ```
 
 ---
 
-## **Conclusion**
-This setup will give you a fully functional E-Commerce web server environment on Ubuntu 22.04 LTS, using Apache2, MySQL, Redis, Postfix, and PHPMyAdmin.
+## **Kesimpulan**
+Dengan konfigurasi ini, Saya memiliki lingkungan server E-Commerce yang berfungsi penuh di Ubuntu 22.04 LTS menggunakan Apache2, MySQL, Redis, Postfix, dan PHPMyAdmin.
 
-Feel free to modify or extend this configuration for production environments!
 
 ---
 
