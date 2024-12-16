@@ -104,7 +104,7 @@ sudo systemctl status apache2
 
 4. Send a test email:
    ```bash
-echo "This is a test email" | mail -s "Test Mail" user@example.com
+   echo "This is a test email" | mail -s "Test Mail" user@example.com
    ```
 
 ---
