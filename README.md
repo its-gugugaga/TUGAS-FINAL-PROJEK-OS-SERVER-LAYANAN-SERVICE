@@ -172,7 +172,7 @@ sudo apt update && sudo apt upgrade -y
 
 5. Jalankan aplikasi Flask menggunakan Gunicorn:
    ```bash
-   gunicorn -w 3 -b 0.0.0.0:5000 app:app
+   gunicorn -b 127.0.0.0:5000 app:app
    ```
 
 ---
@@ -192,8 +192,8 @@ Struktur direktori proyek Saya:
 ## **Pengujian Web Server**
 1. Jalankan aplikasi Flask:
    ```bash
-   cd /var/www/html
-   gunicorn -w 3 -b 0.0.0.0:5000 app:app
+   cd /templates
+   gunicorn -b 127.0.0.0:5000 app:app
    ```
 
 2. Akses website melalui domain Anda:
