@@ -239,6 +239,8 @@ Struktur direktori proyek:
 3. Akses website melalui domain Anda:
    ```text
    http://tokopedidi.shop
+   
+![Screenshot 2024-12-16 225728.png](./path/ke/gambar.jpg)   
 
 ---
 
