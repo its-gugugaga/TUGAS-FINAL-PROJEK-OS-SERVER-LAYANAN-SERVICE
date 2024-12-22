@@ -245,5 +245,4 @@ Struktur direktori proyek:
 ## **Kesimpulan**
 Dengan konfigurasi ini, Saya memiliki lingkungan server E-Commerce yang berfungsi penuh di Ubuntu 22.04 LTS menggunakan Apache2, MySQL, Redis, Postfix, PHPMyAdmin, Flask untuk routing dengan Gunicorn sebagai aplikasi server, serta keamanan tambahan melalui Cloudflare, yang diakses melalui domain [tokopedidi.shop](https://tokopedidi.shop).
 
-Semoga berhasil! 🚀
 
