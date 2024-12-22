@@ -196,8 +196,10 @@ sudo apt update && sudo apt upgrade -y
    ```bash
    nano /icikiwir/app.py
    ```
-   Berikut isi file app.py saya untuk routing:
-   ```from flask import Flask, render_template
+4. Berikut isi file app.py saya untuk routing:
+   
+   ```bash
+   from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -224,7 +226,7 @@ def dashboard():
 if __name__ == '__main__':
     app.run(debug=True)
    ```
-4. Jalankan aplikasi Flask menggunakan Gunicorn:
+5. Jalankan aplikasi Flask menggunakan Gunicorn:
    ```bash
    gunicorn -b 127.0.0.1:5000 app:app
    ```
