@@ -201,30 +201,30 @@ sudo apt update && sudo apt upgrade -y
    ```bash
    from flask import Flask, render_template
 
-app = Flask(__name__)
+   app = Flask(__name__)
 
-@app.route('/')
-@app.route('/index.html')
-def index():
-    return render_template('index.html')
+   @app.route('/')
+   @app.route('/index.html')
+   def index():
+       return render_template('index.html')
 
-@app.route('/about')
-@app.route('/about.html')
-def about():
-    return render_template('about.html')
+   @app.route('/about')
+   @app.route('/about.html')
+   def about():
+       return render_template('about.html')
 
-@app.route('/merchandise')
-@app.route('/merchandise.html')
-def merchandise():
-    return render_template('merchandise.html')
+   @app.route('/merchandise')
+   @app.route('/merchandise.html')
+   def merchandise():
+       return render_template('merchandise.html')
 
-@app.route('/dashboard')
-@app.route('/dashboard.html', methods=['GET', 'POST'])
-def dashboard():
-    return render_template('dashboard.html')
+   @app.route('/dashboard')
+   @app.route('/dashboard.html', methods=['GET', 'POST'])
+   def dashboard():
+   return render_template('dashboard.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+   if __name__ == '__main__':
+   app.run(debug=True)
    ```
 5. Jalankan aplikasi Flask menggunakan Gunicorn:
    ```bash
