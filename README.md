@@ -239,6 +239,8 @@ Struktur direktori proyek:
 3. Akses website melalui domain Anda:
    ```text
    http://tokopedidi.shop
+
+![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/index.png?raw=true) 
    
 
 ---
