@@ -196,18 +196,33 @@ sudo apt update && sudo apt upgrade -y
    ```bash
    nano /icikiwir/app.py
    ```
-   Contoh isi file:
-   ```python
-   from flask import Flask
+   Berikut isi file app.py saya untuk routing:
+   ```from flask import Flask, render_template
 
-   app = Flask(__name__)
+app = Flask(__name__)
 
-   @app.route('/')
-   def home():
-       return "Welcome to Flask with Gunicorn!"
+@app.route('/')
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
 
-   if __name__ == '__main__':
-       app.run()
+@app.route('/about')
+@app.route('/about.html')
+def about():
+    return render_template('about.html')
+
+@app.route('/merchandise')
+@app.route('/merchandise.html')
+def merchandise():
+    return render_template('merchandise.html')
+
+@app.route('/dashboard')
+@app.route('/dashboard.html', methods=['GET', 'POST'])
+def dashboard():
+    return render_template('dashboard.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
    ```
 4. Jalankan aplikasi Flask menggunakan Gunicorn:
    ```bash
