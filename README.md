@@ -1,12 +1,12 @@
 # **FINAL PROJEK OS SERVER SISTEM ADMIN 23.83.0977**
 
 ## **Ringkasan Proyek**
-Proyek ini bertujuan untuk membuat server web E-Commerce pada **Ubuntu 22.04 LTS**. Server ini mencakup layanan **Apache2**, MySQL Database, Redis, Mail Server (Postfix), PHPMyAdmin untuk keperluan manajemen database, dan menggunakan framework Flask untuk routing serta Gunicorn sebagai aplikasi server.
+Proyek ini bertujuan untuk membuat server web E-Commerce pada **Ubuntu Server 22.04 LTS**. Server ini mencakup layanan **Apache2**, MySQL Database, Redis, Mail Server (Postfix), PHPMyAdmin untuk keperluan manajemen database, dan menggunakan framework Flask untuk routing serta Gunicorn sebagai aplikasi server.
 
 ---
 
 ## **Spesifikasi dan Layanan yang Digunakan**
-- **Sistem Operasi**: Ubuntu 22.04 LTS  
+- **Sistem Operasi**: Ubuntu LiveServer 22.04 LTS  
 - **RAM**: 3 GB  
 - **Penyimpanan**: Harddisk 80 GB  
 - **Web Server**: Apache2, Flask dengan Gunicorn  
@@ -261,7 +261,7 @@ Struktur direktori proyek:
 3. Akses website melalui domain:
    ```text
    https://tokopedidi.shop
-4. Hasil Result:
+4. Hasil Result pada Web:
    ![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/index.png?raw=true)    
 
 ---
