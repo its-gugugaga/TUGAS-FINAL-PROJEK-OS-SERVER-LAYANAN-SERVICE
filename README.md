@@ -51,6 +51,8 @@ sudo apt update && sudo apt upgrade -y
    ```
 5. Uji server dengan membuka browser dan mengakses `http://IP-server` atau `http://tokopedidi.shop`. Anda akan melihat halaman default Apache2.
 
+   ![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/apache2.png?raw=true)
+
 ---
 
 ### **3. Integrasi Flask dengan Apache2 melalui WSGI**
@@ -240,8 +242,7 @@ Struktur direktori proyek:
    ```text
    http://tokopedidi.shop
 
-![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/index.png?raw=true) 
-   
+![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/index.png?raw=true)    
 
 ---
 
