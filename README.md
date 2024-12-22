@@ -221,7 +221,7 @@ sudo apt update && sudo apt upgrade -y
    @app.route('/dashboard')
    @app.route('/dashboard.html', methods=['GET', 'POST'])
    def dashboard():
-   return render_template('dashboard.html')
+      return render_template('dashboard.html')
 
    if __name__ == '__main__':
    app.run(debug=True)
@@ -241,6 +241,9 @@ Struktur direktori proyek:
     ├── flaskapp.wsgi   # File WSGI untuk Flask
     └── templates/      # Direktori untuk file HTML
         └── index.html
+        └── about.html
+        └── merchandise.html
+        └── dashboard.html
     └── phpmyadmin/     # Direktori PHPMyAdmin yang ditautkan
 ```
 
@@ -255,9 +258,9 @@ Struktur direktori proyek:
    ```bash
    gunicorn -b 127.0.0.1:5000 app:app
    ```
-3. Akses website melalui domain Anda:
+3. Akses website melalui domain:
    ```text
-   http://tokopedidi.shop
+   https://tokopedidi.shop
 
 ![alt text](https://github.com/its-gugugaga/TUGAS-FINAL-PROJEK-OS-SERVER-LAYANAN-SERVICE/blob/main/index.png?raw=true)    
 
