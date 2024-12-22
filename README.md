@@ -240,7 +240,6 @@ Struktur direktori proyek:
    ```text
    http://tokopedidi.shop
    
-![Screenshot 2024-12-16 225728.png](./path/ke/gambar.jpg)   
 
 ---
 
